@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ar">
+
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>نظام إدارة المنتجات</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+        <link rel="stylesheet" href="style_ar.css">
+        <link rel="shortcut icon" href="management-icon.WebP" type="image/x-icon">
+</head>
+
+<body>
+        <div class="container">
+                <div class="head">
+                        <a href="index.html"><img src="en.gif" alt="arabic">
+                                <p>English</p>
+                        </a>
+                        <h2>نظام إدارة الإلكترونيات</h2>
+                </div>
+                <div class="input">
+                        <input type="text" placeholder=" اسم المنتج" id="title" dir="rtl">
+                        <div class="price-row" dir="rtl">
+                                <input type="number" onkeyup="getTotal()" placeholder="السعر" id="price" dir="rtl">
+                                <input type="number" onkeyup="getTotal()" placeholder="الضرائب" id="taxes" dir="rtl">
+                                <input type="number" onkeyup="getTotal()" placeholder="الإعلانات" id="ads" dir="rtl">
+                                <input type="number" onkeyup="getTotal()" placeholder="الخصم" id="discount" dir="rtl">
+                                <small class="total" id="total" dir="rtl"></small>
+                        </div>
+                        <input type="number" placeholder="الكمية" id="count" dir="rtl">
+                        <select name="product" id="product-select" dir="rtl">
+                                <option value="" disabled selected>اختر فئه المنتج</option>
+                                <optgroup label="Mobiles">
+                                        <option value="Apple">Apple</option>
+                                        <option value="Samsung">Samsung</option>
+                                        <option value="Huawei">Huawei</option>
+                                        <option value="Xiaomi">Xiaomi</option>
+                                        <option value="Oppo">Oppo</option>
+                                        <option value="Realme">Realme</option>
+                                        <option value="Vivo">Vivo</option>
+                                        <option value="Google">Google</option>
+                                </optgroup>
+                                <optgroup label="Televisions">
+                                        <option value="Samsung_TV">Samsung TV</option>
+                                        <option value="LG_TV">LG TV</option>
+                                        <option value="Sony_TV">Sony TV</option>
+                                        <option value="Panasonic_TV">Panasonic TV</option>
+                                        <option value="Philips_TV">Philips TV</option>
+                                </optgroup>
+                        </select>
+
+
+                        <button type="button" class="create-btn" id="submit">إنشاء</button>
+                </div>
+                <div class="output">
+                        <div class="search-section" dir="rtl">
+                                <input type="search" onkeyup="searchData(this.value)" placeholder="بحث" id="search">
+                                <div class="search-buttons">
+                                        <button type="button" id="title_search" onclick="getSearchMood(this.id)">بحث
+                                                عن منتج</button>
+                                        <button type="button" id="category_search" onclick="getSearchMood(this.id)">بحث
+                                                عن فئه المنتج
+                                        </button>
+                                </div>
+                        </div>
+                        <div id="deleteall"></div>
+                        <div class="tabel" dir="rtl">
+                                <table>
+                                        <thead>
+                                                <tr>
+                                                        <th>الرقم</th>
+                                                        <th>اسم المنتج</th>
+                                                        <th>السعر</th>
+                                                        <th>الضرائب</th>
+                                                        <th>الإعلانات</th>
+                                                        <th>الخصم</th>
+                                                        <th>الفئة</th>
+                                                        <th style="background-color: #607D8B;">عدد المنتجات</th>
+                                                        <th>الإجمالي</th>
+                                                        <th>تحديث</th>
+                                                        <th>حذف</th>
+                                                </tr>
+                                        </thead>
+                                        <tbody id="tbody">
+                                        </tbody>
+                                </table>
+                        </div>
+                </div>
+        </div>
+        <script src="main.js"></script>
+</body>
+
+</html>

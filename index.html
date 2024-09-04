@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Product Management System</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+        <link rel="stylesheet" href="style.css">
+        <link rel="shortcut icon" href="management-icon.WebP" type="image/x-icon">
+</head>
+
+<body>
+
+        <div class="container">
+                <div class="head">
+                        <a href="arabic.html"><img src="ar.png" alt="arabic">
+                                <p>Arabic</p>
+                        </a>
+                        <h2>Electronic Management System</h2>
+                </div>
+                <div class="input">
+                        <input type="text" placeholder="title" id="title">
+                        <div class="price-row">
+                                <input type="number" onkeyup="getTotal()" placeholder="price" id="price">
+                                <input type="number" onkeyup="getTotal()" placeholder="taxes" id="taxes">
+                                <input type="number" onkeyup="getTotal()" placeholder="ads" id="ads">
+                                <input type="number" onkeyup="getTotal()" placeholder="discount" id="discount">
+                                <small class="total" id="total"></small>
+                        </div>
+                        <input type="number" placeholder="count" id="count">
+                        <select name="product" id="product-select">
+                                <option value="" disabled selected>Select the product category</option>
+                                <optgroup label="Mobiles">
+                                        <option value="Apple">Apple</option>
+                                        <option value="Samsung">Samsung</option>
+                                        <option value="Huawei">Huawei</option>
+                                        <option value="Xiaomi">Xiaomi</option>
+                                        <option value="Oppo">Oppo</option>
+                                        <option value="Realme">Realme</option>
+                                        <option value="Vivo">Vivo</option>
+                                        <option value="Google">Google</option>
+                                </optgroup>
+                                <optgroup label="Televisions">
+                                        <option value="Samsung_TV">Samsung TV</option>
+                                        <option value="LG_TV">LG TV</option>
+                                        <option value="Sony_TV">Sony TV</option>
+                                        <option value="Panasonic_TV">Panasonic TV</option>
+                                        <option value="Philips_TV">Philips TV</option>
+                                </optgroup>
+                        </select>
+
+                        <button type="button" class="create-btn" id="submit">Create</button>
+                </div>
+                <div class="output">
+                        <div class="search-section">
+                                <input type="search" onkeyup="searchData(this.value)" placeholder="Search" id="search">
+                                <div class="search-buttons">
+                                        <button type="button" id="title_search" onclick="getSearchMood(this.id)">Search
+                                                By Title</button>
+                                        <button type="button" id="category_search"
+                                                onclick="getSearchMood(this.id)">Search By Category</button>
+                                </div>
+                        </div>
+                        <div id="deleteall"></div>
+                        <div class="tabel">
+                                <table>
+                                        <thead>
+                                                <tr>
+                                                        <th>ID</th>
+                                                        <th>TITLE</th>
+                                                        <th>PRICE</th>
+                                                        <th>TAXES</th>
+                                                        <th>ADS</th>
+                                                        <th>DISCOUNT</th>
+                                                        <th>CATEGORY</th>
+                                                        <th style="background-color: #607D8B;">PRODUCT COUNT</th>
+                                                        <th>TOTAL</th>
+                                                        <th>UPDATE</th>
+                                                        <th>DELETE</th>
+                                                </tr>
+                                        </thead>
+                                        <tbody id="tbody">
+                                        </tbody>
+                                </table>
+                        </div>
+                </div>
+        </div>
+        <script src="main.js"></script>
+</body>
+
+</html>
